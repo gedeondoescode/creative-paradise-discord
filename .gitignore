@@ -176,3 +176,6 @@ dist
 
 # dist
 dist/
+
+# sqlite
+*.db

@@ -5,21 +5,25 @@
     "dev": "cross-env NODE_ENV=development nodemon",
     "start": "cross-env NODE_ENV=production node ./dist/index.js",
     "deploy-commands": "node ./dist/deploy-commands.js",
-    "build": "tsup && tsc-alias"
+    "build": "tsup && tsc-alias",
+    "assemble": "pnpm build && pnpm db:push && pnpm deploy-commands",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@libsql/client": "^0.14.0",
     "discord.js": "^14.16.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.39.3"
   },
   "devDependencies": {
     "@types/node": "^22.7.8",
     "cross-env": "^7.0.3",
+    "drizzle-kit": "^0.30.4",
     "nodemon": "^3.1.7",
     "tsc-alias": "^1.8.10",
     "tslib": "^2.8.0",
     "tsup": "^8.3.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
-  },
-  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
+  }
 }

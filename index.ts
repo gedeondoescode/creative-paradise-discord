@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import "dotenv/config";
 
 import {
   Client,
@@ -10,7 +10,9 @@ import {
 import { deployCommands } from "./deploy-commands";
 import { commands } from "./commands";
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+export const client = new Client({
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+});
 
 client.once(Events.ClientReady, async (c) => {
   await deployCommands();
