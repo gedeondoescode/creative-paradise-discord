@@ -1,15 +1,20 @@
 # creative-paradise-bot
 
+PNPM is required. To install PNPM:
+```bash
+npm install -g pnpm
+```
+
 To install dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
-To run:
+To build and run:
 
 ```bash
-bun run index.ts
+pnpm assemble
+pnpm dev
 ```
 
-This project was created using `bun init` in bun v1.1.30. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
